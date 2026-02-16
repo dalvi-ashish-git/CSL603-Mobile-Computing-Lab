@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Backup rules for Android Auto Backup feature (Android 6.0+)
+    This file defines which files should be included in or excluded from automatic backups.
+    Reference: https://developer.android.com/guide/topics/data/autobackup
+-->
+<full-backup-content>
+    <!-- Include the Room database for backup to preserve calculator history -->
+    <include domain="database" path="calculator_history_database" />
+    
+    <!-- Include shared preferences for app settings -->
+    <include domain="sharedpref" path="." />
+    
+    <!-- Exclude cache directory as it contains temporary files -->
+    <exclude domain="cache" path="." />
+    
+    <!-- Exclude any sensitive files if needed in the future -->
+    <!-- <exclude domain="file" path="sensitive_data/" /> -->
+</full-backup-content>
